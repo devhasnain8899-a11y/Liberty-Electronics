@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBERTY ELECTRONICS</title>
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .navbar {
+    background-color: #1c1c1c;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.navbar-brand{
+    color: #ffffff;
+}
+.navbar-toggler-icon{
+    background-color: white;
+    padding: 10px;
+    border-radius: 2px;
+    border: black;
+    width: 50px;
+}
+
+.navbar-brand:hover {
+    color: white;
+    text-decoration: underline;
+}
+.navbar-nav .nav-link {
+    color: white;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.4s ease, color 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+.navbar-nav .active {
+    background-color: white;
+    color: black ;
+    font-weight: bold;
+}
+.logo {
+    width: 40px;
+    height: 50px;
+    margin-right: 10px;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2b2b2b; 
+    color: #e0e0e0; 
+}
+
+h1.display-5 {
+    color: #57c7ff; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.col-md-3 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.product-card {
+    background-color: #393939; 
+    border: 1px solid #444; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border-color: #57c7ff;
+}
+
+.product-card img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    max-height: 200px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100%;
+}
+
+.product-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.product-card:hover .product-title {
+    color: #57c7ff;
+}
+
+.product-price {
+    color: #57c7ff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: #c0c0c0; 
+    margin-bottom: 15px;
+}
+
+.product-card .btn {
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.product-card .btn-primary {
+    background-color: #57c7ff;
+    color: #2b2b2b; 
+}
+
+.product-card .btn-primary:hover {
+    background-color: #45a3d9;
+    color: #2b2b2b;
+}
+
+.product-card .btn-outline-secondary {
+    color: #c0c0c0;
+    border-color: #c0c0c0;
+}
+
+.product-card .btn-outline-secondary:hover {
+    color: #2b2b2b;
+    background-color: #c0c0c0;
+    border-color: #c0c0c0;
+}
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@media (max-width: 768px) {
+    .row {
+        justify-content: center;
+    }
+    
+    .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .product-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-title {
+        font-size: 1rem;
+    }
+
+    .product-price {
+        font-size: 1rem;
+    }
+
+    .product-description {
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+    }
+}
+.seemore{
+    display: none;
+}
+.offcanvas {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid #444;
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid #444; 
+    padding-bottom: 10px;
+}
+
+.offcanvas-header h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #57c7ff; 
+    margin: 0;
+}
+
+.btn-close {
+    color: #e0e0e0;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.btn-close:hover {
+    color: #57c7ff;
+    transform: rotate(90deg); 
+}
+.offcanvas-body {
+    padding: 20px;
+}
+
+#cartItemsList div {
+    padding: 10px 0;
+    border-bottom: 1px solid #444; 
+}
+
+#cartItemsList div:last-child {
+    border-bottom: none;
+}    
+
+#cartItemsList strong {
+    color: #ffffff;
+}
+
+#cartTotal {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #57c7ff;
+    text-align: right;
+    border-top: 1px solid #444;
+    padding-top: 15px;
+}
+
+#cartTotal span {
+    font-size: 1.4rem;
+}
+
+.btn-primary {
+    background-color: #57c7ff;
+    color: #2b2b2b;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #45a3d9;
+    transform: scale(1.05);
+}
+.col_footer1{
+    text-decoration: none;
+    font-weight: bolder;
+    color:white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    background-color: #1c1c1c;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="" style="color: white;">
+                <img src="images/Black White Elegant Monogram Initial Name Logo.png" alt="" style="border-radius: 10px;width: 55px;" class="logo">
+                Liberty Electronics
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productcomparision.html">Compare Products</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="Contact us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="products.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Product
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item"><a class="nav-link" href="products.html" style="color: black;">Product</a></li>
+                            <li class="nav-item"><a class="nav-link" href="samsung.html" style="color: black;">Samsung</a></li>
+                            <li class="nav-item"><a class="nav-link" href="apple.html" style="color: black;">Apple</a></li>
+                            <li class="nav-item"><a class="nav-link" href="haier.html" style="color: black;">Haier</a></li>
+                            <li class="nav-item"><a class="nav-link" href="nikon.html" style="color: black;">Nikon</a></li>
+                            <li class="nav-item"><a class="nav-link" href="cannon.html" style="color: black;">Cannon</a></li>
+                            <li class="nav-item"><a class="nav-link" href="fitbit.html" style="color: black;">Fitbit</a></li>
+                            <li class="nav-item"><a class="nav-link" href="pel.html" style="color: black;">Pel</a></li>
+                        </ul>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartSidebar" aria-labelledby="cartSidebarLabel">
+        <div class="offcanvas-header">
+            <h5 id="cartSidebarLabel">Your Cart</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="cartItemsList">
+            </div>
+            <div id="cartTotal" class="mt-3">
+                <p>Total: Rs. <span id="cartTotalPrice">0</span></p>
+            </div>
+            <button class="btn btn-primary w-100" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+    <section>
+    <div class="text-center py-5">
+    <h1 class="display-5 fw-bold">SMART PHONES</h1>
+    </div>
+        <div class="container py-5">
+          <div class="row justify-content-center">
+              <div class="col-md-3">
+                  <div class="product-card">
+                      <img src="products/mob1.webp" alt="Wireless Headphones" class="img-fluid">
+                      <div class="product-card-body">
+                          <h5 class="product-title">
+                            Samsung Galaxy A54 8GB RAM 128GB Storage 5G PTA Approved</h5>
+                          <p class="product-price">Rs. 109,999</p>
+                          <p class="product-description">Stunning 6.4-inch Super AMOLED display, 120Hz refresh rate, 5000mAh battery, and Exynos 1380 processor.</p>
+                          <div class="d-flex justify-content-between">
+                              <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung Galaxy A54" data-price="109999" data-quantity="1">Add to Cart</button>
+                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3">
+                  <div class="product-card">
+                      <img src="products/mob2.webp" alt="Wireless Headphones" class="img-fluid">
+                      <div class="product-card-body">
+                          <h5 class="product-title">
+                            Samsung Galaxy A06 6GB RAM 128GB Storage PTA Approved</h5>
+                          <p class="product-price">Rs. 59,999</p>
+                          <p class="product-description">6.5-inch PLS LCD display, 5000mAh battery, dual-camera setup.</p>
+                          <div class="d-flex justify-content-between">
+                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung Galaxy A06" data-price="59999" data-quantity="1">Add to Cart</button>
+                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3">
+                  <div class="product-card">
+                      <img src="products/mob3.webp" alt="Wireless Headphones" class="img-fluid">
+                      <div class="product-card-body">
+                          <h5 class="product-title">
+                            Samsung Galaxy Z Fold 6 12GB RAM 256GB Storage Non PTA</h5>
+                          <p class="product-price">Rs. 399,999</p>
+                          <p class="product-description">Stunning 6.4-inch Super AMOLED display, 120Hz refresh rate, 5000mAh battery, and Exynos 1380 processor.</p>
+                          <div class="d-flex justify-content-between">
+                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung Galaxy Z Fold 6" data-price="399999" data-quantity="1">Add to Cart</button>
+                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3">
+                  <div class="product-card">
+                      <img src="products/mob4.webp" alt="Wireless Headphones" class="img-fluid">
+                      <div class="product-card-body">
+                          <h5 class="product-title">
+                            Samsung Galaxy A55 8GB RAM 256GB Storage 5G PTA Approved</h5>
+                          <p class="product-price">Rs. 129,999</p>
+                          <p class="product-description">6.6-inch Super AMOLED display, 5000mAh battery, advanced Exynos chipset.</p>
+                          <div class="d-flex justify-content-between">
+                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung Galaxy A55" data-price="129999" data-quantity="1">Add to Cart</button>
+                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 seemore">
+                  <div class="product-card">
+                      <img src="products/mob5.webp" alt="Wireless Headphones" class="img-fluid">
+                      <div class="product-card-body">
+                          <h5 class="product-title">
+                            Samsung Galaxy A35 8GB RAM 256GB Storage 5G PTA Approved</h5>
+                          <p class="product-price">Rs. 119,999</p>
+                          <p class="product-description">6.5-inch Super AMOLED display, 120Hz refresh rate, 5000mAh battery.</p>
+                          <div class="d-flex justify-content-between">
+                            <button class="btn btn-primary btn-sm addToCartBtn" data-name=" Samsung Galaxy A35" data-price="119999" data-quantity="1">Add to Cart</button>
+                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 seemore">
+                  <div class="product-card">
+                      <img src="products/mob6.webp" alt="Wireless Headphones" class="img-fluid">
+                      <div class="product-card-body">
+                          <h5 class="product-title">
+                            Samsung Galaxy S24 Ultra 12GB RAM 512GB Storage PTA Approved</h5>
+                          <p class="product-price">Rs. 349,999</p>
+                          <p class="product-description">6.8-inch Edge QHD+ AMOLED display, 200MP camera, Snapdragon 8 Gen 3 processor.</p>
+                          <div class="d-flex justify-content-between">
+                              <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung Galaxy S24 Ultra" data-price="349999" data-quantity="1">Add to Cart</button>
+                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 seemore">
+                  <div class="product-card">
+                      <img src="products/mob7.webp" alt="Wireless Headphones" class="img-fluid">
+                      <div class="product-card-body">
+                          <h5 class="product-title">
+                            Samsung A15 8GB RAM 256GB Storage PTA Approved</h5>
+                          <p class="product-price">Rs. 84,999</p>
+                          <p class="product-description">6.5-inch PLS LCD display, 8GB RAM, 256GB storage, 5000mAh battery, and Exynos chipset.</p>
+                          <div class="d-flex justify-content-between">
+                              <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung A15" data-price="84999" data-quantity="1">Add to Cart</button>
+                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 seemore">
+                  <div class="product-card">
+                      <img src="products/mob8.webp" alt="Wireless Headphones" class="img-fluid">
+                      <div class="product-card-body">
+                          <h5 class="product-title">
+                            Samsung Galaxy A25 8GB RAM 256GB Storage 5G PTA Approved</h5>
+                          <p class="product-price">Rs. 94,999</p>
+                          <p class="product-description">6.6-inch Super AMOLED display, 8GB RAM, 256GB storage, 5G connectivity, and 5000mAh battery.</p>
+                          <div class="d-flex justify-content-between">
+                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung Galaxy A25" data-price="94999" data-quantity="1">Add to Cart</button>
+                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 seemore">
+                  <div class="product-card">
+                      <img src="products/mob9.webp" alt="Wireless Headphones" class="img-fluid">
+                      <div class="product-card-body">
+                          <h5 class="product-title">
+                            Samsung Galaxy A34 8GB RAM 256GB Storage 5G PTA Approved</h5>
+                          <p class="product-price">Rs. 89,999</p>
+                          <p class="product-description">6.6-inch Super AMOLED display, 8GB RAM, 256GB storage, 120Hz refresh rate, and 5G support.</p>
+                          <div class="d-flex justify-content-between">
+                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung Galaxy A34" data-price="89999" data-quantity="1">Add to Cart</button>
+                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 seemore">
+                  <div class="product-card">
+                      <img src="products/mob10.webp" alt="Wireless Headphones" class="img-fluid">
+                      <div class="product-card-body">
+                          <h5 class="product-title">
+                            Samsung Galaxy A14 4GB RAM 128GB Storage PTA Approved</h5>
+                          <p class="product-price">Rs. 44,999</p>
+                          <p class="product-description">6.6-inch PLS LCD display, 4GB RAM, 128GB storage, 5000mAh battery, and durable design.</p>
+                          <div class="d-flex justify-content-between">
+                              <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung Galaxy A14" data-price="44999" data-quantity="1">Add to Cart</button>
+                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="text-center py-3">
+                <button id="toggleBtn" class="btn btn-primary">Show More Phones</button>
+            </div> 
+          </div>
+        </div>
+        <div class="text-center py-5">
+            <h1 class="display-5 fw-bold">SMART WATCH</h1>
+            </div>
+                <div class="container py-5">
+                  <div class="row justify-content-center">
+                      <div class="col-md-3">
+                          <div class="product-card">
+                              <img src="products/watch8.webp" alt="Wireless Headphones" class="img-fluid">
+                              <div class="product-card-body">
+                                  <h5 class="product-title">
+                                    Samsung Galaxy Watch 6 Classic 43mm R95</h5>
+                                  <p class="product-price">Rs. 29,999</p>
+                                  <p class="product-description">Elegant design, 1.5-inch Super AMOLED display, Exynos W930 processor, and advanced health tracking features.</p>
+                                  <div class="d-flex justify-content-between">
+                                    <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung Galaxy Watch 6 Classic 43mm R95" data-price="29999" data-quantity="1">Add to Cart</button>
+                                      <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="product-card">
+                              <img src="products/watch9.webp" alt="Wireless Headphones" class="img-fluid">
+                              <div class="product-card-body">
+                                  <h5 class="product-title">
+                                    Samsung Galaxy Watch 7 40mm L300</h5>
+                                  <p class="product-price">Rs. 33,999</p>
+                                  <p class="product-description">Compact 1.4-inch AMOLED display, lightweight build, enhanced fitness tracking, and long battery life.</p>
+                                  <div class="d-flex justify-content-between">
+                                    <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung Galaxy Watch 7 40mm L300" data-price="33999" data-quantity="1">Add to Cart</button>
+                                      <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="product-card">
+                              <img src="products/watch10.webp" alt="Wireless Headphones" class="img-fluid">
+                              <div class="product-card-body">
+                                  <h5 class="product-title">
+                                    Samsung Galaxy Watch Ultra 47mm L705</h5>
+                                  <p class="product-price">Rs. 54,999</p>
+                                  <p class="product-description">Rugged design, 2-inch AMOLED display, durable titanium build, and advanced GPS features for outdoor adventures.</p>                              </p>
+                                  <div class="d-flex justify-content-between">
+                                    <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung Galaxy Watch Ultra 47mm L705" data-price="54999" data-quantity="1">Add to Cart</button>
+                                      <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="product-card">
+                              <img src="products/watch11.webp" alt="Wireless Headphones" class="img-fluid">
+                              <div class="product-card-body">
+                                  <h5 class="product-title">
+                                    Samsung Galaxy Watch FE</h5>
+                                  <p class="product-price">Rs. 23,999</p>
+                                  <p class="product-description"> Affordable 1.4-inch AMOLED display, essential fitness tracking, customizable straps, and reliable battery life.</p>
+                                  <div class="d-flex justify-content-between">
+                                    <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung Galaxy Watch FE" data-price="23999" data-quantity="1">Add to Cart</button>
+                                      <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>  
+                </div>
+                <div class="text-center py-5">
+                    <h1 class="display-5 fw-bold">LAPTOPS</h1>
+                    </div>
+                        <div class="container py-5">
+                          <div class="row justify-content-center">
+                              <div class="col-md-3">
+                                  <div class="product-card">
+                                      <img src="products/laptop7.webp" alt="Wireless Headphones" class="img-fluid">
+                                      <div class="product-card-body">
+                                          <h5 class="product-title">
+                                            Samsung Galaxy Book 3 Ultra Core i7 13th Generation 16GB RAM 1TB SSD Touch Windows 11</h5>
+                                          <p class="product-price">Rs. 479,999</p>
+                                          <p class="product-description">16GB RAM, 1TB SSD, 13th Gen Intel Core i7 processor, 15.6-inch Touchscreen, Windows 11, sleek design for professionals.</p>
+                                          <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung Galaxy Book 3 Ultra Core i7" data-price="479999" data-quantity="1">Add to Cart</button>
+                                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-3">
+                                  <div class="product-card">
+                                      <img src="products/laptop8.webp" alt="Wireless Headphones" class="img-fluid">
+                                      <div class="product-card-body">
+                                          <h5 class="product-title">
+                                            Samsung Galaxy Book 4 Ultra 16 Core Ultra 7 32GB RAM 1TB SSD 6GB RTX 4050 Touch Windows 11</h5>
+                                          <p class="product-price">Rs. 699,999</p>
+                                          <p class="product-description">32GB RAM, 1TB SSD, 6GB NVIDIA RTX 4050 GPU, 16-inch Touchscreen, 16 Core Ultra 7 processor, Windows 11, premium build for power users.</p>
+                                          <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung Galaxy Book 4 Ultra 16 Core Ultra 7" data-price="699999" data-quantity="1">Add to Cart</button>
+                                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>        
+                        </div>
+                  </div>
+                  <div class="text-center py-5">
+                    <h1 class="display-5 fw-bold">LED TV</h1>
+                    </div>
+                        <div class="container py-5">
+                          <div class="row justify-content-center">
+                              <div class="col-md-3">
+                                  <div class="product-card">
+                                      <img src="products/led1.webp" alt="Wireless Headphones" class="img-fluid">
+                                      <div class="product-card-body">
+                                          <h5 class="product-title">
+                                            Samsung 32T5300 32 Inch FHD Smart TV 2020</h5>
+                                          <p class="product-price">64,999</p>
+                                          <p class="product-description">Full HD resolution, PurColor, HDR, Smart Hub with popular streaming apps, and sleek design.</p>
+                                          <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung 32T5300 32 Inch FHD Smart TV 2020" data-price="64999" data-quantity="1">Add to Cart</button>
+                                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-3">
+                                  <div class="product-card">
+                                      <img src="products/led2.webp" alt="Wireless Headphones" class="img-fluid">
+                                      <div class="product-card-body">
+                                          <h5 class="product-title">
+                                            Samsung 65Q70C 65 Inch Smart & 4K QLED TV</h5>
+                                          <p class="product-price">Rs. 359,999</p>
+                                          <p class="product-description">4K QLED display, Quantum Processor 4K, Motion Xcelerator Turbo+, and advanced smart TV features.</p>
+                                          <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung 65Q70C 65 Inch Smart & 4K QLED TV" data-price="359999" data-quantity="1">Add to Cart</button>
+                                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-3">
+                                  <div class="product-card">
+                                      <img src="products/led3.webp" alt="Wireless Headphones" class="img-fluid">
+                                      <div class="product-card-body">
+                                          <h5 class="product-title">
+                                            Samsung 75Q70D 75 inch Smart & Crystal UHD 4K LED TV</h5>
+                                          <p class="product-price">Rs. 479,999</p>
+                                          <p class="product-description">Stunning Crystal UHD 4K resolution, powerful Crystal Processor 4K, and slim bezel design.</p>                              </p>
+                                          <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung 75Q70D 75 inch Smart & Crystal UHD 4K LED TV" data-price="479999" data-quantity="1">Add to Cart</button>
+                                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-3">
+                                  <div class="product-card">
+                                      <img src="products/led4.webp" alt="Wireless Headphones" class="img-fluid">
+                                      <div class="product-card-body">
+                                          <h5 class="product-title">
+                                            Samsung 75DU7000 75 inch Smart & Crystal UHD 4K LED TV</h5>
+                                          <p class="product-price">Rs. 449,999</p>
+                                          <p class="product-description"> Ultra HD 4K resolution, powerful Crystal Processor, built-in voice assistant, and Dolby Audio.</p>
+                                          <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung 75DU7000 75 inch Smart & Crystal UHD 4K LED TV" data-price="449999" data-quantity="1">Add to Cart</button>
+                                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-3">
+                                  <div class="product-card">
+                                      <img src="products/led5.webp" alt="Wireless Headphones" class="img-fluid">
+                                      <div class="product-card-body">
+                                          <h5 class="product-title">
+                                            Samsung 65Q80D 65 inch Smart & 4K QLED TV</h5>
+                                          <p class="product-price">Rs. 389,999</p>
+                                          <p class="product-description">4K QLED display, Direct Full Array backlighting, Object Tracking Sound, and Alexa/Google Assistant support.</p>
+                                          <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung 65Q80D 65 inch Smart & 4K QLED TV" data-price="389999" data-quantity="1">Add to Cart</button>
+                                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>  
+                        </div>
+                        <div class="text-center py-5">
+                            <h1 class="display-5 fw-bold">WASHING MACHINES</h1>
+                            </div>
+                                <div class="container py-5">
+                                  <div class="row justify-content-center">
+                                      <div class="col-md-3">
+                                          <div class="product-card">
+                                              <img src="products/washingm5.webp" alt="Wireless Headphones" class="img-fluid">
+                                              <div class="product-card-body">
+                                                  <h5 class="product-title">
+                                                    Samsung WA10CK4545BYRT Automatic Top Load Washing Machine 10Kg</h5>
+                                                  <p class="product-price">Rs. 84,999</p>
+                                                  <p class="product-description">Samsung WA10CK4545BYRT Automatic Top Load Washing Machine 10Kg, featuring advanced wash cycles, energy-efficient design, and durable build for superior laundry care.</p>
+                                                  <div class="d-flex justify-content-between">
+                                                    <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung WA10CK4545BYRT Automatic Top Load Washing Machine" data-price="84999" data-quantity="1">Add to Cart</button>
+                                                      <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                          <div class="product-card">
+                                              <img src="products/washingm6.webp" alt="Wireless Headphones" class="img-fluid">
+                                              <div class="product-card-body">
+                                                  <h5 class="product-title">
+                                                    Samsung WD11TP34DSX Automatic Front Load Washer & Dryer With Ecobubble</h5>
+                                                  <p class="product-price">Rs. 179,999</p>
+                                                  <p class="product-description">Samsung WD11TP34DSX Automatic Front Load Washer & Dryer With Ecobubble, offering efficient washing and drying with the innovative Ecobubble technology, sleek design, and excellent performance.</p>
+                                                  <div class="d-flex justify-content-between">
+                                                    <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung WD11TP34DSX Automatic Front Load Washer & Dryer With Ecobubble" data-price="179999" data-quantity="1">Add to Cart</button>
+                                                      <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                          <div class="product-card">
+                                              <img src="products/washingm7.webp" alt="Wireless Headphones" class="img-fluid">
+                                              <div class="product-card-body">
+                                                  <h5 class="product-title">
+                                                    Samsung WD85T4046CE Automatic Front Load Washer & Dryer Combo 8.5/6Kg</h5>
+                                                  <p class="product-price">Rs. 144,999</p>
+                                                  <p class="product-description">Samsung WD85T4046CE Automatic Front Load Washer & Dryer Combo 8.5/6Kg, designed for maximum convenience with a 8.5kg washing capacity and 6kg drying capacity, featuring Ecobubble technology and a space-saving combination of washing and drying in one machine.</p>                              </p>
+                                                  <div class="d-flex justify-content-between">
+                                                    <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung WD85T4046CE Automatic Front Load Washer & Dryer Combo" data-price="144999" data-quantity="1">Add to Cart</button>
+                                                      <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                          <div class="product-card">
+                                              <img src="products/washingm8.webp" alt="Wireless Headphones" class="img-fluid">
+                                              <div class="product-card-body">
+                                                  <h5 class="product-title">
+                                                    Samsung WA90CK4545BD Automatic Top Load Washing Machine 9Kg</h5>
+                                                  <p class="product-price">Rs. 74,999</p>
+                                                  <p class="product-description">Samsung WA90CK4545BD Automatic Top Load Washing Machine 9Kg, providing powerful cleaning performance with advanced wash features, a large drum capacity, and efficient energy use for everyday laundry needs.</p>
+                                                  <div class="d-flex justify-content-between">
+                                                    <button class="btn btn-primary btn-sm addToCartBtn" data-name="Samsung WA90CK4545BD Automatic Top Load Washing Machine" data-price="74999" data-quantity="1">Add to Cart</button>
+                                                      <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                    </div>  
+                                </div>        
+    </section>
+    <div class="footer">
+        <div class="col_footer1">
+          <h3>Useful Links</h3>
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="productcomparision.html">Producr Comparison</a>
+          <a href="about.html">About</a>
+          <a href="Contact us.html">Contact us</a>
+        </div>
+        <div class="col_footer2">
+          <h3>Newsletter</h3>
+          <form>
+            <input type="email" placeholder="Your Email Address" required><br>
+            <button type="submit">Subscribe Now</button>
+          </form>
+        </div>
+        <div class="col_footer3"><h3>Contact</h3>
+          <p>123,XYZ road BSK-3 <br>Liberty Electronics ,Pk</p>
+          <div class="social-icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-behance"></i>
+          </div>
+        </div>
+       </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+       const toggleBtn = document.getElementById("toggleBtn");
+        const products = document.querySelectorAll(".seemore");
+        let isExpanded = false;
+
+        toggleBtn.addEventListener("click", function() {
+            products.forEach(product => {
+                product.style.display = isExpanded ? "none" : "block";
+            });
+            isExpanded = !isExpanded;
+            toggleBtn.textContent = isExpanded ? "Show Less Products" : "Show More Products";
+        });
+
+        let cart = [];
+document.querySelectorAll('.addToCartBtn').forEach(button => {
+    button.addEventListener('click', function() {
+        const product = {
+            name: this.getAttribute('data-name'),
+            price: parseFloat(this.getAttribute('data-price')),
+            quantity: parseInt(this.getAttribute('data-quantity'))
+        };
+        cart.push(product);
+        updateCartUI();
+    });
+});
+function updateCartUI() {
+    const cartItemsList = document.getElementById('cartItemsList');
+    const cartTotalPrice = document.getElementById('cartTotalPrice');
+    cartItemsList.innerHTML = '';
+    let total = 0;
+    cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.innerHTML = `<strong>${item.name}</strong><br>Rs. ${item.price} x ${item.quantity}`;
+        cartItemsList.appendChild(itemElement);
+        total += item.price * item.quantity;
+    });
+    cartTotalPrice.textContent = total;
+    let cartSidebar = new bootstrap.Offcanvas(document.getElementById('cartSidebar'));
+    cartSidebar.show();
+}
+function checkout() {
+    alert('Proceeding to checkout...');
+}
+    </script>
+</body>
+</html>

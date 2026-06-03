@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBERTY ELECTRONICS</title>
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .navbar {
+    background-color: #1c1c1c;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.navbar-brand{
+    color: #ffffff;
+}
+.navbar-toggler-icon{
+    background-color: white;
+    padding: 10px;
+    border-radius: 2px;
+    border: black;
+    width: 50px;
+}
+
+.navbar-brand:hover {
+    color: white;
+    text-decoration: underline;
+}
+.navbar-nav .nav-link {
+    color: white;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.4s ease, color 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+.navbar-nav .active {
+    background-color: white;
+    color: black ;
+    font-weight: bold;
+}
+.logo {
+    width: 40px;
+    height: 50px;
+    margin-right: 10px;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2b2b2b; 
+    color: #e0e0e0; 
+}
+
+h1.display-5 {
+    color: #57c7ff; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.col-md-3 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.product-card {
+    background-color: #393939; 
+    border: 1px solid #444; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border-color: #57c7ff;
+}
+
+.product-card img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    max-height: 200px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100%;
+}
+
+.product-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.product-card:hover .product-title {
+    color: #57c7ff;
+}
+
+.product-price {
+    color: #57c7ff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: #c0c0c0; 
+    margin-bottom: 15px;
+}
+
+.product-card .btn {
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.product-card .btn-primary {
+    background-color: #57c7ff;
+    color: #2b2b2b; 
+}
+
+.product-card .btn-primary:hover {
+    background-color: #45a3d9;
+    color: #2b2b2b;
+}
+
+.product-card .btn-outline-secondary {
+    color: #c0c0c0;
+    border-color: #c0c0c0;
+}
+
+.product-card .btn-outline-secondary:hover {
+    color: #2b2b2b;
+    background-color: #c0c0c0;
+    border-color: #c0c0c0;
+}
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@media (max-width: 768px) {
+    .row {
+        justify-content: center;
+    }
+    
+    .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .product-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-title {
+        font-size: 1rem;
+    }
+
+    .product-price {
+        font-size: 1rem;
+    }
+
+    .product-description {
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+    }
+}
+.seemore{
+    display: none;
+}
+.offcanvas {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid #444;
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid #444; 
+    padding-bottom: 10px;
+}
+
+.offcanvas-header h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #57c7ff; 
+    margin: 0;
+}
+
+.btn-close {
+    color: #e0e0e0;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.btn-close:hover {
+    color: #57c7ff;
+    transform: rotate(90deg); 
+}
+.offcanvas-body {
+    padding: 20px;
+}
+
+#cartItemsList div {
+    padding: 10px 0;
+    border-bottom: 1px solid #444; 
+}
+
+#cartItemsList div:last-child {
+    border-bottom: none;
+}    
+
+#cartItemsList strong {
+    color: #ffffff;
+}
+
+#cartTotal {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #57c7ff;
+    text-align: right;
+    border-top: 1px solid #444;
+    padding-top: 15px;
+}
+
+#cartTotal span {
+    font-size: 1.4rem;
+}
+
+.btn-primary {
+    background-color: #57c7ff;
+    color: #2b2b2b;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #45a3d9;
+    transform: scale(1.05);
+}
+.col_footer1{
+    text-decoration: none;
+    font-weight: bolder;
+    color:white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+.footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    background-color: #1c1c1c;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="" style="color: white;">
+                <img src="images/Black White Elegant Monogram Initial Name Logo.png" alt="" style="border-radius: 10px;width: 55px;" class="logo">
+                Liberty Electronics
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productcomparision.html">Compare Products</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="Contact us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="products.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Product
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item"><a class="nav-link" href="products.html" style="color: black;">Product</a></li>
+                            <li class="nav-item"><a class="nav-link" href="samsung.html" style="color: black;">Samsung</a></li>
+                            <li class="nav-item"><a class="nav-link" href="apple.html" style="color: black;">Apple</a></li>
+                            <li class="nav-item"><a class="nav-link" href="haier.html" style="color: black;">Haier</a></li>
+                            <li class="nav-item"><a class="nav-link" href="nikon.html" style="color: black;">Nikon</a></li>
+                            <li class="nav-item"><a class="nav-link" href="cannon.html" style="color: black;">Cannon</a></li>
+                            <li class="nav-item"><a class="nav-link" href="fitbit.html" style="color: black;">Fitbit</a></li>
+                            <li class="nav-item"><a class="nav-link" href="pel.html" style="color: black;">Pel</a></li>
+                        </ul>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartSidebar" aria-labelledby="cartSidebarLabel">
+        <div class="offcanvas-header">
+            <h5 id="cartSidebarLabel">Your Cart</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="cartItemsList">
+            </div>
+            <div id="cartTotal" class="mt-3">
+                <p>Total: Rs. <span id="cartTotalPrice">0</span></p>
+            </div>
+            <button class="btn btn-primary w-100" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+    <section>
+        <div class="text-center py-5">
+            <h1 class="display-5 fw-bold">AIR CONDITIONERS</h1>
+            </div>
+                <div class="container py-5">
+                  <div class="row justify-content-center">
+                      <div class="col-md-3">
+                          <div class="product-card">
+                              <img src="products/ac1.PNG" alt="Wireless Headphones" class="img-fluid">
+                              <div class="product-card-body">
+                                  <h5 class="product-title">
+                                    Haier HSU-18HJUV G 1.5 Ton UV T3 Inverter</h5>
+                                  <p class="product-price">Rs. 155,000</p>
+                                  <p class="product-description">Elegant design, 1.5-inch Super AMOLED display, Exynos W930 processor, and advanced health tracking features.</p>
+                                  <div class="d-flex justify-content-between">
+                                    <button class="btn btn-primary btn-sm addToCartBtn" data-name=" Haier HSU-18HJUV G 1.5 Ton UV T3 Inverter" data-price="155000" data-quantity="1">Add to Cart</button>
+                                      <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="product-card">
+                              <img src="products/ac3.webp" alt="Wireless Headphones" class="img-fluid">
+                              <div class="product-card-body">
+                                  <h5 class="product-title">
+                                    Haier HSU-18HFPCA S 1.5 Ton Pearl DC Inverter</h5>
+                                  <p class="product-price">Rs. 145,000</p>
+                                  <p class="product-description">Compact 1.4-inch AMOLED display, lightweight build, enhanced fitness tracking, and long battery life.</p>
+                                  <div class="d-flex justify-content-between">
+                                    <button class="btn btn-primary btn-sm addToCartBtn" data-name=" Haier HSU-18HFPCA S 1.5 Ton Pearl DC Inverter" data-price="145000" data-quantity="1">Add to Cart</button>
+                                      <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="product-card">
+                              <img src="products/ac4.webp" alt="Wireless Headphones" class="img-fluid">
+                              <div class="product-card-body">
+                                  <h5 class="product-title">
+                                    Haier HSU-18HFCA W 1.5 Ton Triple Inverter</h5>
+                                  <p class="product-price">Rs. 150,000</p>
+                                  <p class="product-description">Rugged design, 2-inch AMOLED display, durable titanium build, and advanced GPS features for outdoor adventures.</p>                              </p>
+                                  <div class="d-flex justify-content-between">
+                                    <button class="btn btn-primary btn-sm addToCartBtn" data-name=" Haier HSU-18HFCA W 1.5 Ton Triple Inverter" data-price="150000" data-quantity="1">Add to Cart</button>
+                                      <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="product-card">
+                              <img src="products/ac5.webp" alt="Wireless Headphones" class="img-fluid">
+                              <div class="product-card-body">
+                                  <h5 class="product-title">
+                                    Haier HSU-12HFCS W 1.0 Ton Triple Inverter</h5>
+                                  <p class="product-price">Rs. 135,000</p>
+                                  <p class="product-description"> Affordable 1.4-inch AMOLED display, essential fitness tracking, customizable straps, and reliable battery life.</p>
+                                  <div class="d-flex justify-content-between">
+                                    <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier HSU-12HFCS W 1.0 Ton Triple Inverter" data-price="135000" data-quantity="1">Add to Cart</button>
+                                      <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>  
+                </div>
+                <div class="text-center py-5">
+                    <h1 class="display-5 fw-bold">FREEZERS/FRIDGE</h1>
+                    </div>
+                        <div class="container py-5">
+                          <div class="row justify-content-center">
+                              <div class="col-md-3">
+                                  <div class="product-card">
+                                      <img src="products/freezer1.webp" alt="Wireless Headphones" class="img-fluid">
+                                      <div class="product-card-body">
+                                          <h5 class="product-title">
+                                            HAIER HDF-545INV Double Door Inverter Chest Deep Freezer</h5>
+                                          <p class="product-price">Rs. 138,999</p>
+                                          <p class="product-description">HAIER HDF-545INV: Double Door Inverter Chest Deep Freezer.</p>
+                                          <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name=" HAIER HDF-545INV Double Door Inverter Chest Deep Freezer" data-price="138999" data-quantity="1">Add to Cart</button>
+                                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-3">
+                                  <div class="product-card">
+                                      <img src="products/freezer2.webp" alt="Wireless Headphones" class="img-fluid">
+                                      <div class="product-card-body">
+                                          <h5 class="product-title">
+                                            Haier HDF-405SD Single Door Chest Deep Freezer</h5>
+                                          <p class="product-price">Rs. 109,999</p>
+                                          <p class="product-description">Haier HDF-405SD: Single Door Chest Deep Freezer.</p>
+                                          <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier HDF-405SD Single Door Chest Deep Freezer" data-price="109999" data-quantity="1">Add to Cart</button>
+                                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-3">
+                                  <div class="product-card">
+                                      <img src="products/freezer4.webp" alt="Wireless Headphones" class="img-fluid">
+                                      <div class="product-card-body">
+                                          <h5 class="product-title">
+                                            Haier HRF 346 IFGA/IFRA Digital Inverter + with HCS Technology Refrigerator</h5>
+                                          <p class="product-price">Rs. 92,999</p>
+                                          <p class="product-description">Haier HRF 346 IFGA/IFRA: Digital Inverter + with HCS Technology Refrigerator.</p>
+                                          <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier HRF 346 IFGA/IFRA Digital Inverter + with HCS Technology Refrigerator" data-price="92999" data-quantity="1">Add to Cart</button>
+                                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-3">
+                                  <div class="product-card">
+                                      <img src="products/freezer3.webp" alt="Wireless Headphones" class="img-fluid">
+                                      <div class="product-card-body">
+                                          <h5 class="product-title">
+                                            Haier HDF-385H Double Door Chest Deep Freezer</h5>
+                                          <p class="product-price">Rs. 124,999</p>
+                                          <p class="product-description">Haier HDF-385H: Double Door Chest Deep Freezer.</p>
+                                          <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier HDF-385H Double Door Chest Deep Freezer" data-price="124999" data-quantity="1">Add to Cart</button>
+                                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-3 seemore">
+                                  <div class="product-card">
+                                      <img src="products/freezer5.webp" alt="Wireless Headphones" class="img-fluid">
+                                      <div class="product-card-body">
+                                          <h5 class="product-title">
+                                            HAIER HRF-622IBS SIDE X SIDE INVERTER</h5>
+                                          <p class="product-price">Rs. 199,999</p>
+                                          <p class="product-description">HAIER HRF-622IBS: Side x Side Inverter.</p>
+                                          <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="HAIER HRF-622IBS SIDE X SIDE INVERTER" data-price="199999" data-quantity="1">Add to Cart</button>
+                                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-3 seemore">
+                                  <div class="product-card">
+                                      <img src="products/freezer6.webp" alt="Wireless Headphones" class="img-fluid">
+                                      <div class="product-card-body">
+                                          <h5 class="product-title">
+                                            Haier HRF 346 IPRA/IPGA Smart Inverter Refrigerator</h5>
+                                          <p class="product-price">Rs. 89,999</p>
+                                          <p class="product-description">Haier HRF 346 IPRA/IPGA: Smart Inverter Refrigerator.</p>
+                                          <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier HRF 346 IPRA/IPGA Smart Inverter Refrigerator" data-price="89999" data-quantity="1">Add to Cart</button>
+                                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-3 seemore">
+                                  <div class="product-card">
+                                      <img src="products/freezer7.webp" alt="Wireless Headphones" class="img-fluid">
+                                      <div class="product-card-body">
+                                          <h5 class="product-title">
+                                            Haier HRF 438IFGA Two Door Inverter Refrigerator</h5>
+                                          <p class="product-price">Rs. 102,999</p>
+                                          <p class="product-description">Haier HRF 438IFGA: Two Door Inverter Refrigerator.</p>
+                                          <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier HRF 438IFGA Two Door Inverter Refrigerator" data-price="102999" data-quantity="1">Add to Cart</button>
+                                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                               <div class="col-md-3 seemore">
+                                  <div class="product-card">
+                                      <img src="products/freezer9.webp" alt="Wireless Headphones" class="img-fluid">
+                                      <div class="product-card-body">
+                                          <h5 class="product-title">
+                                            HAIER HRF-578TBG 4 DOOR INVERTER</h5>
+                                          <p class="product-price">Rs. 249,999</p>
+                                          <p class="product-description">HAIER HRF-578TBG: 4 Door Inverter.</p>
+                                          <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name=" HAIER HRF-578TBG 4 DOOR INVERTER" data-price="249999" data-quantity="1">Add to Cart</button>
+                                              <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="text-center py-3">
+                                    <button id="toggleBtn" class="btn btn-primary">Show More Phones</button>
+                              </div> 
+                        </div>  
+                    </div>
+                    <div class="text-center py-5">
+                        <h1 class="display-5 fw-bold">SMART TVs</h1>
+                    </div>
+                    <div class="container py-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-3">
+                                <div class="product-card">
+                                    <img src="products/led6.webp" alt="Haier 65S80EUX Smart TV" class="img-fluid">
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">Haier 65S80EUX 65 inch Smart & 4K QLED TV</h5>
+                                        <p class="product-price">Rs. 249,999</p>
+                                        <p class="product-description">Haier 65S80EUX: 65 inch Smart & 4K QLED TV.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier 65S80EUX 65 inch Smart & 4K QLED TV" data-price="249999" data-quantity="1">Add to Cart</button>
+                                            <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="product-card">
+                                    <img src="products/led7.webp" alt="Haier H50S800UX Smart TV" class="img-fluid">
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">Haier H50S800UX 50 inch Smart & 4K LED TV</h5>
+                                        <p class="product-price">Rs. 999,99</p>
+                                        <p class="product-description">Haier H50S800UX: 50 inch Smart & 4K LED TV.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier H50S800UX 50 inch Smart & 4K LED TV" data-price="99999" data-quantity="1">Add to Cart</button>
+                                            <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="product-card">
+                                    <img src="products/led8.webp" alt="Haier 50S80EUX Smart TV" class="img-fluid">
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">Haier 50S80EUX 50 inch Smart & 4K QLED TV</h5>
+                                        <p class="product-price">Rs. 129,999</p>
+                                        <p class="product-description">Haier 50S80EUX: 50 inch Smart & 4K QLED TV.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier 50S80EUX 50 inch Smart & 4K QLED TV" data-price="129999" data-quantity="1">Add to Cart</button>
+                                            <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="product-card">
+                                    <img src="products/led9.webp" alt="Haier 40K800FX Google Android TV" class="img-fluid">
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">Haier 40K800FX 40 inch Google Android LED TV</h5>
+                                        <p class="product-price">Rs. 64,999</p>
+                                        <p class="product-description">Haier 40K800FX: 40 inch Google Android LED TV.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier 40K800FX 40 inch Google Android LED TV" data-price="64999" data-quantity="1">Add to Cart</button>
+                                            <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="product-card">
+                                    <img src="products/led10.webp" alt="Haier 43K800UX Smart TV" class="img-fluid">
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">Haier 43K800UX 43 inch Smart & 4K UHD Google LED TV</h5>
+                                        <p class="product-price">Rs. 79,999</p>
+                                        <p class="product-description">Haier 43K800UX: 43 inch Smart & 4K UHD Google LED TV.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier 43K800UX 43 inch Smart & 4K UHD Google LED TV" data-price="79999" data-quantity="1">Add to Cart</button>
+                                            <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center py-5">
+                        <h1 class="display-5 fw-bold">WASHING MACHINES</h1>
+                    </div>
+                    <div class="container py-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-3">
+                                <div class="product-card">
+                                    <img src="products/washingm1.webp" alt="Haier HWM80-1269X Washing Machine" class="img-fluid">
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">Haier HWM80-1269X Automatic Top Load Washing Machine 8Kg</h5>
+                                        <p class="product-price">Rs. 55,999</p>
+                                        <p class="product-description">Haier HWM80-1269X: Automatic Top Load Washing Machine, 8Kg capacity.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier HWM80-1269X Automatic Top Load Washing Machine 8Kg" data-price="55999" data-quantity="1">Add to Cart</button>
+                                            <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="product-card">
+                                    <img src="products/washingm2.webp" alt="Haier HWM 85-826 Washing Machine" class="img-fluid">
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">Haier HWM 85-826 8.5KG Automatic Top Load Washing Machine</h5>
+                                        <p class="product-price">Rs. 59,999</p>
+                                        <p class="product-description">Haier HWM 85-826: 8.5KG Automatic Top Load Washing Machine.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier HWM 85-826 8.5KG Automatic Top Load Washing Machine" data-price="59999" data-quantity="1">Add to Cart</button>
+                                            <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="product-card">
+                                    <img src="products/washingm3.webp" alt="Haier HWM120-1678ES8 Washing Machine" class="img-fluid">
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">Haier HWM120-1678ES8 12KG Automatic Top Load Washing Machine</h5>
+                                        <p class="product-price">Rs. 79,999</p>
+                                        <p class="product-description">Haier HWM120-1678ES8: 12KG Automatic Top Load Washing Machine.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier HWM120-1678ES8 12KG Automatic Top Load Washing Machine" data-price="79999" data-quantity="1">Add to Cart</button>
+                                            <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="product-card">
+                                    <img src="products/washingm4.webp" alt="Haier HW100-BP14929S3 Washing Machine" class="img-fluid">
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">Haier HW100-BP14929S3 Automatic Front Load Washing Machine 10Kg</h5>
+                                        <p class="product-price">Rs. 94,999</p>
+                                        <p class="product-description">Haier HW100-BP14929S3: Automatic Front Load Washing Machine, 10Kg capacity.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier HW100-BP14929S3 Automatic Front Load Washing Machine 10Kg" data-price="94999" data-quantity="1">Add to Cart</button>
+                                            <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center py-5">
+                        <h1 class="display-5 fw-bold">MICROWAVE OVENS</h1>
+                    </div>
+                    
+                    <div class="container py-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-3">
+                                <div class="product-card">
+                                    <img src="products/mw1.webp" alt="Haier HMN-20MXP6 Solo Microwave Oven" class="img-fluid">
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">Haier HMN-20MXP6 Solo Microwave Oven</h5>
+                                        <p class="product-price">Rs. 22,899</p>
+                                        <p class="product-description">HAIER HMN-20MXP6: Solo Microwave Oven with advanced features.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier HMN-20MXP6 Solo Microwave Oven" data-price="22899" data-quantity="1">Add to Cart</button>
+                                            <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="product-card">
+                                    <img src="products/mw2.webp" alt="Haier HMW-30AFR Air Fryer Microwave Oven" class="img-fluid">
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">Haier HMW-30AFR Air Fryer Microwave Oven</h5>
+                                        <p class="product-price">Rs. 34,999</p>
+                                        <p class="product-description">HAIER HMW-30AFR: Air Fryer Microwave Oven with multiple cooking functions.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier HMW-30AFR Air Fryer Microwave Oven" data-price="34999" data-quantity="1">Add to Cart</button>
+                                            <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="product-card">
+                                    <img src="products/mw3.webp" alt="Haier HMN-62MX80 Solo Microwave Oven" class="img-fluid">
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">Haier HMN-62MX80 Solo Microwave Oven</h5>
+                                        <p class="product-price">Rs. 18,999</p>
+                                        <p class="product-description">HAIER HMN-62MX80: Solo Microwave Oven with efficient cooking power.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier HMN-62MX80 Solo Microwave Oven" data-price="18999" data-quantity="1">Add to Cart</button>
+                                            <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="product-card">
+                                    <img src="products/mw4.webp" alt="Haier HMW-20MX12 Solo Microwave Oven" class="img-fluid">
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">Haier HMW-20MX12 Solo Microwave Oven</h5>
+                                        <p class="product-price">Rs. 19,499</p>
+                                        <p class="product-description">HAIER HMW-20MX12: Solo Microwave Oven with modern features.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier HMW-20MX12 Solo Microwave Oven" data-price="19499" data-quantity="1">Add to Cart</button>
+                                            <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="product-card">
+                                    <img src="products/mw5.webp" alt="Haier HMN-32100EGB Grill Microwave Oven" class="img-fluid">
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">Haier HMN-32100EGB Grill Microwave Oven</h5>
+                                        <p class="product-price">Rs. 27,999</p>
+                                        <p class="product-description">HAIER HMN-32100EGB: Grill Microwave Oven with versatile cooking functions.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-primary btn-sm addToCartBtn" data-name="Haier HMN-32100EGB Grill Microwave Oven" data-price="27999" data-quantity="1">Add to Cart</button>
+                                            <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                     
+    </section>
+    <div class="footer">
+        <div class="col_footer1">
+          <h3>Useful Links</h3>
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="productcomparision.html">Producr Comparison</a>
+          <a href="about.html">About</a>
+          <a href="Contact us.html">Contact us</a>
+        </div>
+        <div class="col_footer2">
+          <h3>Newsletter</h3>
+          <form>
+            <input type="email" placeholder="Your Email Address" required><br>
+            <button type="submit">Subscribe Now</button>
+          </form>
+        </div>
+        <div class="col_footer3"><h3>Contact</h3>
+          <p>123,XYZ road BSK-3 <br>Liberty Electronics ,Pk</p>
+          <div class="social-icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-behance"></i>
+          </div>
+        </div>
+       </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+       const toggleBtn = document.getElementById("toggleBtn");
+        const products = document.querySelectorAll(".seemore");
+        let isExpanded = false;
+
+        toggleBtn.addEventListener("click", function() {
+            products.forEach(product => {
+                product.style.display = isExpanded ? "none" : "block";
+            });
+            isExpanded = !isExpanded;
+            toggleBtn.textContent = isExpanded ? "Show Less Products" : "Show More Products";
+        });
+        let cart = [];
+document.querySelectorAll('.addToCartBtn').forEach(button => {
+    button.addEventListener('click', function() {
+        const product = {
+            name: this.getAttribute('data-name'),
+            price: parseFloat(this.getAttribute('data-price')),
+            quantity: parseInt(this.getAttribute('data-quantity'))
+        };
+        cart.push(product);
+        updateCartUI();
+    });
+});
+function updateCartUI() {
+    const cartItemsList = document.getElementById('cartItemsList');
+    const cartTotalPrice = document.getElementById('cartTotalPrice');
+    cartItemsList.innerHTML = '';
+    let total = 0;
+    cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.innerHTML = `<strong>${item.name}</strong><br>Rs. ${item.price} x ${item.quantity}`;
+        cartItemsList.appendChild(itemElement);
+        total += item.price * item.quantity;
+    });
+    cartTotalPrice.textContent = total;
+    let cartSidebar = new bootstrap.Offcanvas(document.getElementById('cartSidebar'));
+    cartSidebar.show();
+}
+function checkout() {
+    alert('Proceeding to checkout...');
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBERTY ELECTRONICS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <style>
+
+* {box-sizing: border-box;}
+body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+            margin: 0;
+            height: auto;       
+            background-color: rgba(10, 8, 13, 0.717);
+            background-repeat: no-repeat;
+        }
+
+        .slider {
+            position: relative;
+            width: 140%;
+            max-width: 100%;
+            margin: 0px auto;
+            overflow: hidden;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 1.5s ease-in-out;
+            position: relative;
+        }
+
+        .slide {
+            position: relative;
+            min-width: 100%;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            text-align: center;
+        }
+        .slide>h5{
+          font-weight: bold;
+        }
+
+        .slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+            z-index: 1;
+        }
+
+        .slide h1 {
+            position: relative;
+            z-index: 2;
+            font-size: 3.5rem;
+            font-weight: bold;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .slide p {
+            position: relative;
+            z-index: 2;
+            font-size: 1.2rem;
+            margin-top: 10px;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .slide:nth-child(1) {
+            background: url('images/technology-2200260_1280.jpg') no-repeat center center/cover;
+        }
+
+        .slide:nth-child(2) {
+            background: url('images/slider2.avif') no-repeat center center/cover;
+        }
+
+        .slide:nth-child(3) {
+            background: url('images/slides3.avif') no-repeat center center/cover;
+        }
+
+        .slide:nth-child(4) {
+            background: url('images/laptop-5987093_1280.jpg') no-repeat center center/cover;
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            z-index: 3;
+        }
+
+        .dot {
+            width: 15px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.4);
+            border: 2px solid white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #f39c12;
+            transform: scale(1.3);
+            animation: bounce 1s infinite;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.8);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            z-index: 3;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .arrow:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .arrow-left {
+            left: 20px;
+        }
+
+        .arrow-right {
+            right: 20px;
+        }
+    .image-container {
+      background-color: transparent;
+      position: relative;
+      width: 1200px;
+      height: 600px;
+      gap: 20px;
+      border: 2px solid;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    
+    
+    
+    .btn11{
+      background-color: transparent;
+      color: #f2f2f2;
+      border: 2px white;
+    }
+    .btn11{
+      border-radius: 25px;
+      padding: 10px;
+      border: 2px white;
+      font-size: 20px;
+      font-weight: 600;
+      color: #f2f2f2;
+      background-color: transparent;
+
+    }
+    .btn11:hover{
+      background-color: rgb(123, 12, 167);
+    }
+    .btn3{
+      
+      background-color: transparent;
+      border: none;
+      color: #f2f2f2;
+    }
+    .image-container>img{
+      gap: 50px;
+      border-radius: 10px;
+    }
+    
+    .image-container .text_4 {
+      display: flex;
+      position: absolute;
+      top: 33%; 
+      left: 31.3%; 
+      transform: translate(-50%, -50%);
+      color: black; 
+      font-size: 50px;
+      font-weight: 900;
+      border-radius: 5px;
+      width: 600px;
+    }
+    .image-container .text_5 {
+      display: flex;
+      position: absolute;
+      top: 54%; 
+      left: 31.5%; 
+      transform: translate(-50%, -50%);
+      color: black; 
+      font-size: 39px;
+      font-weight: 200;
+      border-radius: 5px;
+      width: 600px;
+    }
+    .image-container .btn {
+      display: flex;
+      position: absolute;
+      top: 63%; 
+      left: 10.9%; 
+      transform: translate(-50%, -50%);
+      color: black; 
+      font-size: 15px;
+      font-weight: 500;
+      border-radius: 10px;
+      width: 100px;
+      text-align: center;
+
+    }
+    .btn{
+      
+      background-color: transparent;
+      border: none;
+      border-radius: 25px;
+      padding: 10px;
+      border: none;
+      font-size: 20px;
+      font-weight: 600;
+      color: #f2f2f2;
+      border: 5px solid black;
+      background-color: transparent;
+
+    }
+    .btn:hover{
+      border: none;
+      font-weight: bold;
+      background-color: white;
+        }
+    
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 3.5s;
+  transition-duration: 700ms;
+}
+
+
+.card1{
+  background-color: transparent;
+  height: 800px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 10px;
+}
+.cards1{
+  background-color: transparent;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+
+
+
+.here1{
+  display: flex;
+   position: absolute;
+   transform: translate(-50%, -50%);
+   left: 67%;
+   top: 23%;
+}
+.here2{
+  display: flex;
+   position: absolute;
+   transform: translate(-50%, -50%);
+   left: 70%;
+   top: 34%;
+}
+.here3{
+  display: flex;
+   position: absolute;
+   transform: translate(-50%, -50%);
+   left: 73.5%;
+   top: 48%;
+}
+.here4{
+  display: flex;
+   position: absolute;
+   transform: translate(-50%, -50%);
+   left: 69.9%;
+   top: 58%;
+}
+.here5{
+  display: flex;
+   position: absolute;
+   transform: translate(-50%, -50%);
+   left: 63.9%;
+   top: 65%;
+}
+.here1>h4{
+  font-weight: 800;
+   font-size: 25px;
+   color: #f2f2f2;
+}
+.here2>h1{
+  top: 30%;
+  font-weight: 800;
+   font-size: 85px;
+   color: #f2f2f2;
+}
+.here3>h4{
+  font-weight: 800;
+   font-size: 25px;
+   color: #f2f2f2;
+}
+.here4>h5{
+  font-weight: 400;
+   font-size: 17px;
+   color: #f2f2f2;
+}
+.here5>button{
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+}
+.here5>button:hover{
+  background-color: black;
+  color: #f2f2f2;
+  font-weight: bold;
+  box-shadow: 0px 0px 16px black;
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 9}
+}
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+.slideshow-container{
+    margin-top: 70px;
+}
+.col_footer1{
+    text-decoration: none;
+    font-weight: bolder;
+    color:white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    background-color: #1c1c1c;
+}
+</style>
+</head>
+<body>
+  <div>
+    
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+          <a class="navbar-brand" href="" style="color: white;">
+              <img src="images/Black White Elegant Monogram Initial Name Logo.png" alt="" style="border-radius: 10px;width: 55px;" class="logo">
+              Liberty Electronics
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a class="nav-link active" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="productcomparision.html">Compare Products</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="Contact us.html">Contact Us</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="products.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Product
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li class="nav-item"><a class="nav-link" href="products.html" style="color: black;">Product</a></li>
+                          <li class="nav-item"><a class="nav-link" href="samsung.html" style="color: black;">Samsung</a></li>
+                          <li class="nav-item"><a class="nav-link" href="apple.html" style="color: black;">Apple</a></li>
+                          <li class="nav-item"><a class="nav-link" href="haier.html" style="color: black;">Haier</a></li>
+                          <li class="nav-item"><a class="nav-link" href="nikon.html" style="color: black;">Nikon</a></li>
+                          <li class="nav-item"><a class="nav-link" href="cannon.html" style="color: black;">Cannon</a></li>
+                          <li class="nav-item"><a class="nav-link" href="fitbit.html" style="color: black;">Fitbit</a></li>
+                          <li class="nav-item"><a class="nav-link" href="pel.html" style="color: black;">Pel</a></li>
+                      </ul>
+                    </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <div class="slider">
+    <div class="slider-track">
+        <div class="slide">
+            <h1>Welcome to Liberty Electronics</h1>
+            <h5>Your one-stop destination for cutting-edge electronic products.</h5>
+        </div>
+        <div class="slide">
+            <h1>Explore Top Brands</h1>
+            <h5>Find the latest gadgets from Samsung, Sony, Apple, and more.</h5>
+        </div>
+        <div class="slide">
+            <h1>Compare & Choose</h1>
+            <h5>Compare features, prices, and specifications with ease.</h5>
+        </div>
+        <div class="slide">
+            <h1>Shop with Confidence</h1>
+            <h5>Enjoy secure shopping and exceptional customer service.</h5>
+        </div>
+    </div>
+    <div class="dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <button class="arrow arrow-left">&#8592;</button>
+    <button class="arrow arrow-right">&#8594;</button>
+  </div>
+  <div class="brand_3">
+    <h2>Brands</h2>
+  </div>
+  <div class="brand_4">
+    <div class="brand_1">
+      <a href="samsung.html"><div class="brandlogo1"><img src="images/samsung logo.png" alt="" height="140px" width="250px" ></div></a>
+      <a href="apple.html"><div class="brandlogo1"><img src="images/apple logo.png" alt="" height="100px" style="border-radius: 20px;"></div></a>
+      <a href="haier.html"><div class="brandlogo1"><img src="images/haier logo.png" alt="" height="100px" width="200px" style="border-radius: 10px;"></div></a>
+    </div>
+    <div class="brand_2">
+      <a href="sony.html"><div class="brandlogo1"><img src="images/soney1.webp" alt="" height="120px" width="300px" style="border-radius: 20px;"></div></a>
+      <a href="cannon.html"><div class="brandlogo1"><img src="images/cannon logo.jpg" alt="" height="90px" width="220px" style="border-radius: 10px;"></div></a>
+      <a href="nikon.html"><div class="brandlogo1"><img src="images/nikon-logo.jpg" alt="" height="90px" style="border-radius: 10px;"></div></a>
+    </div>
+  </div>    
+  </div>
+
+  <div class="father">
+    <div class="about-content container">
+        <a href="#introduction" style="text-decoration: none;"><h2 style="color: white;font-weight: 800;">Introduction:</h2></a>
+        <p style="color: white;">Liberty Electronics is a leading provider of high-quality electronic products and solutions. Since our establishment in 1995, we have been committed to bringing the latest innovations in technology to our customers. Our mission is to combine quality, trust, and affordability, making technology accessible to everyone.</p>
+        <p style="color: white;">We specialize in offering a wide range of electronics, including smartphones, laptops, home appliances, and smart gadgets, from the most trusted brands in the industry. Our dedication to customer satisfaction and innovation has helped us become a trusted name in electronics.</p>
+    </div>
+    
+    <div class="child"><img src="images/telework-6795505_1280.jpg" alt="" height="450px" width="650px" style="border-radius: 10px;"></div>
+</div>
+  
+<div class="footer">
+  <div class="col_footer1">
+    <h3>Useful Links</h3>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="productcomparision.html">Producr Comparison</a>
+    <a href="about.html">About</a>
+    <a href="Contact us.html">Contact us</a>
+  </div>
+  <div class="col_footer2">
+    <h3>Newsletter</h3>
+    <form>
+      <input type="email" placeholder="Your Email Address" required><br>
+      <button type="submit">Subscribe Now</button>
+    </form>
+  </div>
+  <div class="col_footer3"><h3>Contact</h3>
+    <p>123,XYZ road BSK-3 <br>Liberty Electronics ,Pk</p>
+    <div class="social-icons">
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-behance"></i>
+    </div>
+  </div>
+ </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); 
+}
+function buyNow() {
+        alert('Your order has been delivered as soon as possible!');
+    }
+
+
+    document.getElementById('submit-button').addEventListener('click', function() {
+            const selectedFeatures = Array.from(document.querySelectorAll('input[name="features"]:checked'))
+                .map(input => input.value);
+
+            if (selectedFeatures.length > 0) {
+                alert('You have selected: ' + selectedFeatures.join(', '));
+            } else {
+                alert('Please select at least one feature.');
+            }
+        });
+</script>
+<script>
+  const track = document.querySelector('.slider-track');
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const arrowLeft = document.querySelector('.arrow-left');
+    const arrowRight = document.querySelector('.arrow-right');
+    let currentIndex = 0;
+
+    const updateSlider = () => {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    };
+
+    const nextSlide = () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
+    };
+
+    const prevSlide = () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlider();
+    };
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateSlider();
+        });
+    });
+
+    arrowRight.addEventListener('click', nextSlide);
+    arrowLeft.addEventListener('click', prevSlide);
+
+    // Automatic Sliding
+    setInterval(nextSlide, 5000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBERTY ELECTRONICS</title>
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .navbar {
+    background-color: #1c1c1c;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.navbar-brand{
+    color: #ffffff;
+}
+.navbar-toggler-icon{
+    background-color: white;
+    padding: 10px;
+    border-radius: 2px;
+    border: black;
+    width: 50px;
+}
+
+.navbar-brand:hover {
+    color: white;
+    text-decoration: underline;
+}
+.navbar-nav .nav-link {
+    color: white;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.4s ease, color 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+.navbar-nav .active {
+    background-color: white;
+    color: black ;
+    font-weight: bold;
+}
+.logo {
+    width: 40px;
+    height: 50px;
+    margin-right: 10px;
+}
+    body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2b2b2b; 
+    color: #e0e0e0; 
+}
+
+h1.display-5 {
+    color: #57c7ff; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.col-md-3 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.product-card {
+    background-color: #393939; 
+    border: 1px solid #444; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border-color: #57c7ff;
+}
+
+.product-card img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    max-height: 200px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100%;
+}
+
+.product-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.product-card:hover .product-title {
+    color: #57c7ff;
+}
+
+.product-price {
+    color: #57c7ff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: #c0c0c0; 
+    margin-bottom: 15px;
+}
+
+.product-card .btn {
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.product-card .btn-primary {
+    background-color: #57c7ff;
+    color: #2b2b2b; 
+}
+
+.product-card .btn-primary:hover {
+    background-color: #45a3d9;
+    color: #2b2b2b;
+}
+
+.product-card .btn-outline-secondary {
+    color: #c0c0c0;
+    border-color: #c0c0c0;
+}
+
+.product-card .btn-outline-secondary:hover {
+    color: #2b2b2b;
+    background-color: #c0c0c0;
+    border-color: #c0c0c0;
+}
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@media (max-width: 768px) {
+    .row {
+        justify-content: center;
+    }
+    
+    .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .product-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-title {
+        font-size: 1rem;
+    }
+
+    .product-price {
+        font-size: 1rem;
+    }
+
+    .product-description {
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+    }
+}
+.offcanvas {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid #444;
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid #444; 
+    padding-bottom: 10px;
+}
+
+.offcanvas-header h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #57c7ff; 
+    margin: 0;
+}
+
+.btn-close {
+    color: #e0e0e0;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.btn-close:hover {
+    color: #57c7ff;
+    transform: rotate(90deg); 
+}
+.offcanvas-body {
+    padding: 20px;
+}
+
+#cartItemsList div {
+    padding: 10px 0;
+    border-bottom: 1px solid #444; 
+}
+
+#cartItemsList div:last-child {
+    border-bottom: none;
+}    
+
+#cartItemsList strong {
+    color: #ffffff;
+}
+
+#cartTotal {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #57c7ff;
+    text-align: right;
+    border-top: 1px solid #444;
+    padding-top: 15px;
+}
+
+#cartTotal span {
+    font-size: 1.4rem;
+}
+
+.btn-primary {
+    background-color: #57c7ff;
+    color: #2b2b2b;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #45a3d9;
+    transform: scale(1.05);
+}
+.col_footer1{
+    text-decoration: none;
+    font-weight: bolder;
+    color:white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    background-color: #1c1c1c;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="" style="color: white;">
+                <img src="images/Black White Elegant Monogram Initial Name Logo.png" alt="" style="border-radius: 10px;width: 55px;" class="logo">
+                Liberty Electronics
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productcomparision.html">Compare Products</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="Contact us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="products.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Product
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item"><a class="nav-link" href="products.html" style="color: black;">Product</a></li>
+                            <li class="nav-item"><a class="nav-link" href="samsung.html" style="color: black;">Samsung</a></li>
+                            <li class="nav-item"><a class="nav-link" href="apple.html" style="color: black;">Apple</a></li>
+                            <li class="nav-item"><a class="nav-link" href="haier.html" style="color: black;">Haier</a></li>
+                            <li class="nav-item"><a class="nav-link" href="nikon.html" style="color: black;">Nikon</a></li>
+                            <li class="nav-item"><a class="nav-link" href="cannon.html" style="color: black;">Cannon</a></li>
+                            <li class="nav-item"><a class="nav-link" href="fitbit.html" style="color: black;">Fitbit</a></li>
+                            <li class="nav-item"><a class="nav-link" href="pel.html" style="color: black;">Pel</a></li>
+                        </ul>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartSidebar" aria-labelledby="cartSidebarLabel">
+        <div class="offcanvas-header">
+            <h5 id="cartSidebarLabel">Your Cart</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="cartItemsList">
+            </div>
+            <div id="cartTotal" class="mt-3">
+                <p>Total: Rs. <span id="cartTotalPrice">0</span></p>
+            </div>
+            <button class="btn btn-primary w-100" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+    <section>
+        <div class="text-center py-5">
+            <h1 class="display-5 fw-bold">CAMERAS</h1>
+        </div>
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <img src="products/camera4.webp" alt="Canon IXUS 285 HS Camera" class="img-fluid">
+                        <div class="product-card-body">
+                            <h5 class="product-title">Canon IXUS 285 HS Camera</h5>
+                            <p class="product-price">Rs. 24,999</p>
+                            <p class="product-description">Canon IXUS 285 HS: Compact digital camera with Wi-Fi and NFC.</p>
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-primary btn-sm addToCartBtn" data-name="Canon IXUS 285 HS Camera" data-price="24999" data-quantity="1">Add to Cart</button>
+                                <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <img src="products/camera5.webp" alt="Canon EOS 90D with 18-135mm Lens Kit" class="img-fluid">
+                        <div class="product-card-body">
+                            <h5 class="product-title">Canon EOS 90D with 18-135mm Lens Kit</h5>
+                            <p class="product-price">Rs. 234,999</p>
+                            <p class="product-description">Canon EOS 90D: DSLR camera with 18-135mm lens kit, 4K video, and high-resolution sensor.</p>
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-primary btn-sm addToCartBtn" data-name="Canon EOS 90D with 18-135mm Lens Kit" data-price="234999" data-quantity="1">Add to Cart</button>
+                                <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <img src="products/camera7.webp" alt="Canon EOS 200D Mark II 18-55mm DSLR Camera" class="img-fluid">
+                        <div class="product-card-body">
+                            <h5 class="product-title">Canon EOS 200D Mark II 18-55mm DSLR Camera</h5>
+                            <p class="product-price">Rs. 14,999</p>
+                            <p class="product-description">Canon EOS 200D Mark II: DSLR camera with 18-55mm lens, perfect for photography enthusiasts.</p>
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-primary btn-sm addToCartBtn" data-name="Canon EOS 200D Mark II 18-55mm DSLR Camera" data-price="14999" data-quantity="1">Add to Cart</button>
+                                <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <img src="products/camera10.webp" alt="Canon 3000D DSLR Camera with 18-55mm DC III Lens" class="img-fluid">
+                        <div class="product-card-body">
+                            <h5 class="product-title">Canon 3000D DSLR Camera with 18-55mm DC III Lens</h5>
+                            <p class="product-price">Rs. 44,999</p>
+                            <p class="product-description">Canon 3000D: DSLR camera with 18-55mm DC III lens, ideal for beginners.</p>
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-primary btn-sm addToCartBtn" data-name="Canon 3000D DSLR Camera with 18-55mm DC III Lens" data-price="44999" data-quantity="1">Add to Cart</button>
+                                <button class="btn btn-outline-secondary btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </section>
+    <div class="footer">
+        <div class="col_footer1">
+          <h3>Useful Links</h3>
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="productcomparision.html">Producr Comparison</a>
+          <a href="about.html">About</a>
+          <a href="Contact us.html">Contact us</a>
+        </div>
+        <div class="col_footer2">
+          <h3>Newsletter</h3>
+          <form>
+            <input type="email" placeholder="Your Email Address" required><br>
+            <button type="submit">Subscribe Now</button>
+          </form>
+        </div>
+        <div class="col_footer3"><h3>Contact</h3>
+          <p>123,XYZ road BSK-3 <br>Liberty Electronics ,Pk</p>
+          <div class="social-icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-behance"></i>
+          </div>
+        </div>
+       </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+         let cart = [];
+document.querySelectorAll('.addToCartBtn').forEach(button => {
+    button.addEventListener('click', function() {
+        const product = {
+            name: this.getAttribute('data-name'),
+            price: parseFloat(this.getAttribute('data-price')),
+            quantity: parseInt(this.getAttribute('data-quantity'))
+        };
+        cart.push(product);
+        updateCartUI();
+    });
+});
+function updateCartUI() {
+    const cartItemsList = document.getElementById('cartItemsList');
+    const cartTotalPrice = document.getElementById('cartTotalPrice');
+    cartItemsList.innerHTML = '';
+    let total = 0;
+    cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.innerHTML = `<strong>${item.name}</strong><br>Rs. ${item.price} x ${item.quantity}`;
+        cartItemsList.appendChild(itemElement);
+        total += item.price * item.quantity;
+    });
+    cartTotalPrice.textContent = total;
+    let cartSidebar = new bootstrap.Offcanvas(document.getElementById('cartSidebar'));
+    cartSidebar.show();
+}
+function checkout() {
+    alert('Proceeding to checkout...');
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBERTY ELECTRONICS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #f9f9f9, #e0e0e0);
+        }
+
+        .page-header {
+            background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            padding: 40px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .table-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .table tbody tr:nth-child(odd) {
+            background-color: #f8f9fa;
+        }
+        .table tbody tr:hover {
+            background-color: #e3f2fd;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+        }
+
+        .form-control {
+            font-size: 1rem;
+        }
+
+        .product-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .bg-highlight {
+            background-color: #030608;
+            color: white;
+            font-weight: bold;
+        }
+
+        .footer {
+            background: linear-gradient(90deg, #2c5364, #203a43, #0f2027);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .footer a {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="" style="color: white;">
+                <img src="images/Black White Elegant Monogram Initial Name Logo.png" alt="" style="border-radius: 10px;width: 55px;" class="logo">
+                Liberty Electronics
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productcomparision.html">Compare Products</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="Contact us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="products.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Product
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item"><a class="nav-link" href="products.html" style="color: black;">Product</a></li>
+                            <li class="nav-item"><a class="nav-link" href="samsung.html" style="color: black;">Samsung</a></li>
+                            <li class="nav-item"><a class="nav-link" href="apple.html" style="color: black;">Apple</a></li>
+                            <li class="nav-item"><a class="nav-link" href="haier.html" style="color: black;">Haier</a></li>
+                            <li class="nav-item"><a class="nav-link" href="nikon.html" style="color: black;">Nikon</a></li>
+                            <li class="nav-item"><a class="nav-link" href="cannon.html" style="color: black;">Cannon</a></li>
+                            <li class="nav-item"><a class="nav-link" href="fitbit.html" style="color: black;">Fitbit</a></li>
+                            <li class="nav-item"><a class="nav-link" href="pel.html" style="color: black;">Pel</a></li>
+                        </ul>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="page-header text-center">
+        <h1 style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-style: italic;">Compare Our Camera's</h1>
+        <p class="mb-0" style="font-style: italic;">Find the perfect device for your needs at Liberty Electronics</p>
+    </header>
+
+    <div class="container table-container">
+        <h2 class="text-center my-4">Select Products to Compare</h2>
+        <table class="table table-bordered border-dark">
+            <tr class="bg-highlight">
+                <th>Select Product</th>
+                <th>
+                    <select class="form-control" id="select1" onchange="item1(this.value)">
+                        <option value="0">-- Select Product --</option>
+                    </select>
+                </th>
+                <th>
+                    <select class="form-control" id="select2" onchange="item2(this.value)">
+                        <option value="0">-- Select Product --</option>
+                    </select>
+                </th>
+            </tr>
+            <tr>
+                <th>Product Image</th>
+                <td>
+                    <img src="logo.jpg" id="img1" alt="Product 1" class="product-image">
+                </td>
+                <td>
+                    <img src="logo.jpg" id="img2" alt="Product 2" class="product-image">
+                </td>
+            </tr>
+            <tr>
+                <th>Product Price</th>
+                <td id="price1" class="text-success">N/A</td>
+                <td id="price2" class="text-success">N/A</td>
+            </tr>
+            <tr>
+                <th>Product Description</th>
+                <td id="desc1">N/A</td>
+                <td id="desc2">N/A</td>
+            </tr>
+            <tr>
+                <th>Product Brand</th>
+                <td id="brand1">N/A</td>
+                <td id="brand2">N/A</td>
+            </tr>
+        </table>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Liberty Electronics. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js "></script>
+    <script src="cameras.js"></script>
+</body>
+</html>
